@@ -1,10 +1,9 @@
 import React from 'react';
-import Cart from './cart.svg';
 
 const CartWidget = () => {
     return(
         <div className="contenedor-carrito">
-            <img src={Cart} alt="Carrito" className="header__carrito"/>
+            <img src="./img/cart.svg" alt="Carrito" className="header__carrito"/>
         </div>
     )
 }
