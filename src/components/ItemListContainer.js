@@ -5,7 +5,7 @@ const ItemListContainer = ({aviso}) => {
     return(
         <div className="contenedor-items">
             <h1>{aviso}</h1>
-            <ItemCount/>
+            <ItemCount stock={10} initial={1} />
         </div>
     )
 }

@@ -1,27 +1,24 @@
 import React, { useState } from "react";
 
-const ItemCount = () => {
+const ItemCount = ({stock, initial}) => {
 
-    const [contador, cambiarContador] = useState(1);
-    const [stock] = useState(10);
-    const [sinStock] = useState(0);
+    const [contador, cambiarContador] = useState(initial);
 
-    const comprobarStock = () => {
-        if(contador === sinStock){
-            console.log('sin stock')
-        } else if (contador === stock){
-            console.log('sin stock')
+    const restar = (e) => {
+        if(contador === initial){
+            e.target.disabled = true;
+            console.log('sin producto');
+        } 
+        cambiarContador(contador -1);
+
+    }
+
+    const sumar = (e) => {
+        if(contador === stock){
+            e.target.disabled = true;
+            console.log('sin stock');
         }
-    }
-
-    const restar = () => {
-        cambiarContador(contador -1)
-        comprobarStock();
-    }
-
-    const sumar = () => {
-        cambiarContador(contador +1)
-        comprobarStock();
+        cambiarContador(contador +1);
     }
 
     return(
