@@ -74,7 +74,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: 50px;
+}
+
+.contador {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background: #727171;
+  border-radius: 10px;
+  margin: 35px;
+}
+.contador h2 {
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+  color: #fff;
+}
+.contador .botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contador .botones input, .contador .botones button {
+  width: 35px;
+  height: 35px;
+}
+.contador .botones button {
+  border: none;
+  background: #250a87;
+  color: #fff;
+  cursor: pointer;
+}
+.contador .botones button:hover {
+  background: #190759;
 }
 
 /*# sourceMappingURL=main.css.map */
