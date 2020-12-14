@@ -9,8 +9,11 @@ const ItemCount = ({stock, initial}) => {
             e.target.disabled = true;
             console.log('sin producto');
         } 
-        cambiarContador(contador -1);
 
+        if(contador >= initial){
+            e.target.disabled = false;
+            cambiarContador(contador -1);
+        }  
     }
 
     const sumar = (e) => {
@@ -18,7 +21,11 @@ const ItemCount = ({stock, initial}) => {
             e.target.disabled = true;
             console.log('sin stock');
         }
-        cambiarContador(contador +1);
+
+        if(contador <= stock){
+            e.target.disabled = false;
+            cambiarContador(contador +1);
+        }
     }
 
     return(
