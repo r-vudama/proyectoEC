@@ -7,7 +7,7 @@ const ItemCount = ({stock, initial}) => {
     useEffect(() => {
             if (contador < initial) {cambiarContador(initial)}
             if (contador > stock) {cambiarContador(stock)}
-          }, [contador]);
+          }, [contador, stock, initial]);
 
 
     return(
