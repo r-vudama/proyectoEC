@@ -1,40 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const ItemCount = ({stock, initial}) => {
 
     const [contador, cambiarContador] = useState(initial);
 
-    const restar = (e) => {
-        if(contador === initial){
-            e.target.disabled = true;
-            console.log('sin producto');
-        } 
+    useEffect(() => {
+            if (contador < initial) {cambiarContador(initial)}
+            if (contador > stock) {cambiarContador(stock)}
+          }, [contador]);
 
-        if(contador >= initial){
-            e.target.disabled = false;
-            cambiarContador(contador -1);
-        }  
-    }
-
-    const sumar = (e) => {
-        if(contador === stock){
-            e.target.disabled = true;
-            console.log('sin stock');
-        }
-
-        if(contador <= stock){
-            e.target.disabled = false;
-            cambiarContador(contador +1);
-        }
-    }
 
     return(
         <div className="contador">
             <h2>Contador</h2>
             <div className="botones">
-                <button onClick={restar}>-</button>
+                <button onClick={() => cambiarContador(contador -1)}>-</button>
                 <input type="number" value={contador} disabled/>
-                <button onClick={sumar}>+</button>
+                <button onClick={() => cambiarContador(contador +1)}>+</button>
             </div>
         </div>
     )
