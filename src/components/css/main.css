@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Electrolize", sans-serif;
 }
 
 .header-contenedor {
@@ -79,22 +80,12 @@
 }
 
 .contador {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  background: #727171;
-  border-radius: 10px;
-  margin: 35px;
-}
-.contador h2 {
-  height: 30px;
-  width: 100%;
-  text-align: center;
-  margin: 10px 0;
-  color: #fff;
 }
 .contador .botones {
   display: flex;
@@ -107,12 +98,12 @@
 }
 .contador .botones button {
   border: none;
-  background: #250a87;
+  background: #038c08;
   color: #fff;
   cursor: pointer;
 }
 .contador .botones button:hover {
-  background: #190759;
+  background: #055a08;
 }
 
 .lista-productos {
@@ -149,6 +140,43 @@
   width: 250px;
   height: 250px;
   margin-top: 20px;
+}
+
+.producto-card-detail {
+  width: 350px;
+  height: 680px;
+  background: #471055;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.producto-card-detail p {
+  font-size: 12px;
+  padding: 10px;
+  text-align: center;
+}
+.producto-card-detail img {
+  width: 280px;
+}
+.producto-card-detail .card-titulo, .producto-card-detail .card-valor {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.lista-productos-detail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #000;
+}
+.lista-productos-detail h2 {
+  width: 100%;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

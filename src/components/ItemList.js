@@ -10,19 +10,19 @@ const ItemList = () => {
             let promesa = new Promise ((resolver,rechazar)=>{
                 resolver([{
                             "id": "1",
-                            "producto": "Teclado",
-                            "valor": 1800,
-                            "img": "https://th.bing.com/th/id/OIP.ILLEDppzc4KvdJ73URRc8QHaHa?pid=Api&rs=1"
+                            "producto": "Doom",
+                            "valor": 250,
+                            "img": "https://t.gamesnostalgia.com/screenshots/d/o/doom/main_small.jpg"
                             },
                             {"id": "2",
-                            "producto": "Monitor",
-                            "valor": 3000,
-                            "img": "https://officemachines.net/zoomimages/113170-2.jpg"
+                            "producto": "Road Rash",
+                            "valor": 300,
+                            "img": "https://t.gamesnostalgia.com/screenshots/r/o/road-rash_/main_small.jpg"
                             },
                             {"id": "3",
-                            "producto": "Mouse",
-                            "valor": 1500,
-                            "img": "https://images.techhive.com/images/article/2017/03/havitmouse2-100713812-orig.jpg"
+                            "producto": "Hill Street Blues",
+                            "valor": 200,
+                            "img": "https://t.gamesnostalgia.com/screenshots/h/i/hill-street-blues/main_small.jpg"
                             }])
         }) 
         .then((resultado)=>{

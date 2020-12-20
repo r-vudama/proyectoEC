@@ -12,7 +12,6 @@ const ItemCount = ({stock, initial}) => {
 
     return(
         <div className="contador">
-            <h2>Contador</h2>
             <div className="botones">
                 <button onClick={() => cambiarContador(contador -1)}>-</button>
                 <input type="number" value={contador} disabled/>
