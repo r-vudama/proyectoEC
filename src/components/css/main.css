@@ -12,8 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #493991;
-  box-shadow: 0px 3px 23px -2px rgba(0, 0, 0, 0.57);
+  background: #fdbb30;
 }
 
 .header {
@@ -76,7 +75,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px;
+  padding: 50px 0;
+  background: #c9c9c9;
 }
 
 .contador {
@@ -98,12 +98,12 @@
 }
 .contador .botones button {
   border: none;
-  background: #038c08;
+  background: #e80033;
   color: #fff;
   cursor: pointer;
 }
 .contador .botones button:hover {
-  background: #055a08;
+  background: #bf0d3e;
 }
 
 .lista-productos {
@@ -121,48 +121,61 @@
 }
 
 .producto-card {
-  width: 300px;
-  height: 450px;
-  background: #706b6b;
+  width: 200px;
+  height: 250px;
+  background: #e80033;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 20px;
   border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 10px 10px 5px -1px rgba(0, 0, 0, 0.75);
+}
+.producto-card:hover {
+  background: #bf0d3e;
 }
 .producto-card p {
   margin: 3px;
-  font-size: 30px;
+  font-size: 20px;
   color: #fff;
 }
 .producto-card img {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   margin-top: 20px;
 }
 
 .producto-card-detail {
-  width: 350px;
-  height: 680px;
-  background: #471055;
+  width: 90%;
+  height: 100%;
+  background: #ed8b00;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  box-shadow: 10px 10px 5px -1px rgba(0, 0, 0, 0.75);
+}
+.producto-card-detail .producto-info {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.producto-card-detail p {
-  font-size: 12px;
+.producto-card-detail .producto-info p {
+  font-size: 14px;
   padding: 10px;
   text-align: center;
 }
+.producto-card-detail .producto-info .card-titulo, .producto-card-detail .producto-info .card-valor {
+  font-size: 30px;
+  font-weight: bold;
+}
 .producto-card-detail img {
   width: 280px;
-}
-.producto-card-detail .card-titulo, .producto-card-detail .card-valor {
-  font-size: 15px;
-  font-weight: bold;
+  margin-right: 30px;
 }
 
 .lista-productos-detail {
@@ -172,7 +185,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #000;
 }
 .lista-productos-detail h2 {
   width: 100%;

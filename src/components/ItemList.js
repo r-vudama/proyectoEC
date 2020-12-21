@@ -7,22 +7,22 @@ const ItemList = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            let promesa = new Promise ((resolver,rechazar)=>{
+            new Promise ((resolver,rechazar)=>{
                 resolver([{
                             "id": "1",
                             "producto": "Doom",
                             "valor": 250,
-                            "img": "https://t.gamesnostalgia.com/screenshots/d/o/doom/main_small.jpg"
+                            "img": "https://cdn.vox-cdn.com/uploads/chorus_asset/file/6444491/doom_cover_art.0.jpg"
                             },
                             {"id": "2",
                             "producto": "Road Rash",
                             "valor": 300,
-                            "img": "https://t.gamesnostalgia.com/screenshots/r/o/road-rash_/main_small.jpg"
+                            "img": "https://cdn.vox-cdn.com/thumbor/3m8GttaP_Ea8ckDualfy2EGv7kM=/75x0:885x540/1200x800/filters:focal(75x0:885x540)/cdn.vox-cdn.com/uploads/chorus_image/image/9661203/road_rash.0.png"
                             },
                             {"id": "3",
                             "producto": "Hill Street Blues",
                             "valor": 200,
-                            "img": "https://t.gamesnostalgia.com/screenshots/h/i/hill-street-blues/main_small.jpg"
+                            "img": "https://s.uvlist.net/l/y2011/05/85006.jpg"
                             }])
         }) 
         .then((resultado)=>{
