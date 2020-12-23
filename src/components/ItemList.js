@@ -3,7 +3,7 @@ import Item from './Item'
 
 const ItemList = () => {
 
-    const [items, cargarItems] = useState(false);
+    const [items, setItems] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
@@ -26,7 +26,7 @@ const ItemList = () => {
                             }])
         }) 
         .then((resultado)=>{
-            cargarItems(resultado)
+            setItems(resultado)
             // console.log(resultado)
         })
         }, 2000);

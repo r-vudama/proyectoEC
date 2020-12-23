@@ -3,7 +3,7 @@ import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer = () => {
 
-    const [item, cargarItem] = useState(false);
+    const [item, setItem] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
               return respuesta.json();
             })
         .then((resultado)=>{
-            cargarItem(resultado)
+            setItem(resultado)
             // console.log(resultado)
         })
         }, 2000);

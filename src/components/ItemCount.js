@@ -2,20 +2,20 @@ import React, { useState, useEffect } from "react";
 
 const ItemCount = ({stock, initial}) => {
 
-    const [contador, cambiarContador] = useState(initial);
+    const [contador, setContador] = useState(initial);
 
     useEffect(() => {
-            if (contador < initial) {cambiarContador(initial)}
-            if (contador > stock) {cambiarContador(stock)}
+            if (contador < initial) {setContador(initial)}
+            if (contador > stock) {setContador(stock)}
           }, [contador, stock, initial]);
 
 
     return(
         <div className="contador">
             <div className="botones">
-                <button onClick={() => cambiarContador(contador -1)}>-</button>
+                <button onClick={() => setContador(contador -1)}>-</button>
                 <input type="number" value={contador} disabled/>
-                <button onClick={() => cambiarContador(contador +1)}>+</button>
+                <button onClick={() => setContador(contador +1)}>+</button>
             </div>
         </div>
     )
