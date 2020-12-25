@@ -1,14 +1,13 @@
 import React from 'react';
 // import ItemCount from './ItemCount'
 import ItemList from './ItemList'
-import ItemDetailContainer from './ItemDetailContainer'
+// import ItemDetailContainer from './ItemDetailContainer'
 
-const ItemListContainer = ({aviso}) => {
+const ItemListContainer = () => {
     return(
         <div className="contenedor-items">
-            <h1>{aviso}</h1>
+            <h1>Bienvenido a RETRO GAMES</h1>
             <ItemList/>
-            <ItemDetailContainer/>
         </div>
     )
 }

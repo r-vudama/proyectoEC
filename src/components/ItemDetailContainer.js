@@ -1,13 +1,14 @@
 import React, { useState, useEffect} from 'react';
 import ItemDetail from './ItemDetail';
+import Item from "./Item";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({id}) => {
 
     const [item, setItem] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
-            fetch("https://videogamesapi.herokuapp.com/api/games/5/")
+            fetch(`https://videogamesapi.herokuapp.com/api/games/${id}`)
             .then(respuesta => {
               return respuesta.json();
             })
