@@ -1,10 +1,10 @@
 import React, { useState, useEffect} from 'react';
 import ItemDetail from './ItemDetail';
-import Item from "./Item";
 
-const ItemDetailContainer = ({id}) => {
+const ItemDetailContainer = (props) => {
 
     const [item, setItem] = useState(false);
+    let id = props.match.params.id
 
     useEffect(() => {
         setTimeout(() => {
@@ -17,11 +17,10 @@ const ItemDetailContainer = ({id}) => {
             // console.log(resultado)
         })
         }, 2000);
-    }, [])
+    }, [id])
 
     return(
         <div className="lista-productos-detail">
-            <h2>{item.title}</h2>
             {item ? 
             <ItemDetail key={item.id} title={item.title} description={item.description} img={item.cover} valor={250}/>
      : 'Cargando producto...'}
