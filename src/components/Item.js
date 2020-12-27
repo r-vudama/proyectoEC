@@ -6,10 +6,8 @@ const Item = ({title, valor, cover}) => {
         <div className="producto-card">
             <img src={cover} alt={title}/>
             <p>{title}</p>
-            <p>${valor}</p>
         </div>
     )
 };
 
 export default Item;
-

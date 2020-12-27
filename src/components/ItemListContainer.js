@@ -1,13 +1,16 @@
 import React from 'react';
-// import ItemCount from './ItemCount'
-import ItemList from './ItemList'
-// import ItemDetailContainer from './ItemDetailContainer'
+import { Route, Switch } from "react-router-dom";
+import ItemList from './ItemList';
+import Platforms from './secciones/Platforms';
 
 const ItemListContainer = () => {
     return(
         <div className="contenedor-items">
-            <h1>Bienvenido a RETRO GAMES</h1>
-            <ItemList/>
+
+                <Route path="/" exact>
+                    <h1>Bienvenido a RETRO GAMES</h1>
+                    <ItemList/>
+                </Route>
         </div>
     )
 }
