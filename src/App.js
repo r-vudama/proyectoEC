@@ -6,7 +6,6 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Platforms from './components/secciones/Platforms';
 import Genres from './components/secciones/Genres';
 import Directors from './components/secciones/Directors';
-import Screenshots from './components/secciones/Screenshots';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
             <Route path="/platforms" component={Platforms}/>
             <Route path="/genres" component={Genres}/>
             <Route path="/directors" component={Directors}/>
-            <Route path="/screenshots" component={Screenshots}/>
           </Switch>
         </BrowserRouter>
       </div>

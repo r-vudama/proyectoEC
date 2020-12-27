@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react';
 
 const Directors = () => {
-    return (
-        <div>
-            Directores
+    const [items, setItems] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            fetch("https://videogamesapi.herokuapp.com/api/directors/")
+            .then(respuesta => {
+              return respuesta.json();
+            })
+        .then((resultado)=>{
+            setItems(resultado.results)
+            // console.log(resultado.results)
+        })
+        }, 2000);
+    }, [])
+
+    return(
+        <div className="lista-productos-detail">
+            <h2>Directores</h2>
+            {items ? items.map((card, i) => (
+                            <div key={card.id} className="card-Directors">
+                            <p><span>Nombre: </span>{card.name}</p>
+                            <p><span>Nacionalidad: </span>{card.born_country}</p>
+                         </div>
+                        )) : 'Cargando información...'}
         </div>
     )
 }

@@ -7,8 +7,7 @@ const NavBar = () => {
   const [links, setLinks] = useState([
                                       {nombre: 'Plataformas', url: '/platforms'}, 
                                       {nombre: 'Generos', url: '/genres'}, 
-                                      {nombre: 'Directores', url: '/directors'}, 
-                                      {nombre: 'Screenshots', url: '/screenshots'}
+                                      {nombre: 'Directores', url: '/directors'}
                                     ])
     
     return (
