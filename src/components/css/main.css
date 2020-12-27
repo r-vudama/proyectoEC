@@ -302,4 +302,25 @@ body {
   font-weight: bold;
 }
 
+.paginacion {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.paginacion input, .paginacion button {
+  width: 35px;
+  height: 35px;
+}
+.paginacion button {
+  border: none;
+  background: #e80033;
+  color: #fff;
+  cursor: pointer;
+}
+.paginacion button:hover {
+  background: #bf0d3e;
+}
+
 /*# sourceMappingURL=main.css.map */
