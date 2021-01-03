@@ -193,7 +193,7 @@ body {
   margin-right: 30px;
 }
 
-.btn-confirmar {
+.btn-confirmar, .btn-agregar {
   width: 200px;
   border: none;
   background: #e80033;
@@ -202,8 +202,21 @@ body {
   color: #fff;
   cursor: pointer;
 }
-.btn-confirmar:hover {
+.btn-confirmar:hover, .btn-agregar:hover {
   background: #bf0d3e;
+}
+
+.btn-agregar {
+  width: 200px;
+  border: none;
+  background: #910048;
+  margin: 20px;
+  padding: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-agregar:hover {
+  background: #d0006f;
 }
 
 .lista-productos-detail {
