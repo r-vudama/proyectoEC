@@ -4,7 +4,6 @@ const Directors = () => {
     const [items, setItems] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => {
             fetch("https://videogamesapi.herokuapp.com/api/directors/")
             .then(respuesta => {
               return respuesta.json();
@@ -13,7 +12,6 @@ const Directors = () => {
             setItems(resultado.results)
             // console.log(resultado.results)
         })
-        }, 2000);
     }, [])
 
     return(

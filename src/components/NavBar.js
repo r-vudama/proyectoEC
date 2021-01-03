@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import CartWidget from './CartWidget'
-import { NavLink } from 'react-router-dom'
+import CartWidget from './CartWidget';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
 
   const [links, setLinks] = useState([
+                                      {nombre: 'Juegos', url: '/'}, 
                                       {nombre: 'Plataformas', url: '/platforms'}, 
                                       {nombre: 'Generos', url: '/genres'}, 
                                       {nombre: 'Directores', url: '/directors'}

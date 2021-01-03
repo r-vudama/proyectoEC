@@ -1,7 +1,6 @@
 import React from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import ItemList from './ItemList';
-import Platforms from './secciones/Platforms';
 
 const ItemListContainer = () => {
     return(

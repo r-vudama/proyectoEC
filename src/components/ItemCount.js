@@ -1,21 +1,30 @@
 import React, { useState, useEffect } from "react";
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, onAdd}) => {
 
     const [contador, setContador] = useState(initial);
 
     useEffect(() => {
-            if (contador < initial) {setContador(initial)}
+            if (contador < initial) {return setContador(initial)}
             if (contador > stock) {setContador(stock)}
           }, [contador, stock, initial]);
 
+    const sumar = () => {
+        setContador(contador + 1)
+        onAdd(contador + 1)
+    }
+
+    const restar = () => {
+        setContador(contador -1)
+        onAdd(contador -1)
+    }
 
     return(
         <div className="contador">
             <div className="botones">
-                <button onClick={() => setContador(contador -1)}>-</button>
+                <button onClick={restar}>-</button>
                 <input type="number" value={contador} disabled/>
-                <button onClick={() => setContador(contador +1)}>+</button>
+                <button onClick={sumar}>+</button>
             </div>
         </div>
     )

@@ -4,7 +4,6 @@ const Platforms = () => {
     const [items, setItems] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => {
             fetch("https://videogamesapi.herokuapp.com/api/platforms/")
             .then(respuesta => {
               return respuesta.json();
@@ -13,7 +12,6 @@ const Platforms = () => {
             setItems(resultado.results)
             // console.log(resultado.results)
         })
-        }, 2000);
     }, [])
 
     return(

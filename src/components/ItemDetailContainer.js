@@ -7,7 +7,6 @@ const ItemDetailContainer = (props) => {
     let id = props.match.params.id
 
     useEffect(() => {
-        setTimeout(() => {
             fetch(`https://videogamesapi.herokuapp.com/api/games/${id}`)
             .then(respuesta => {
               return respuesta.json();
@@ -16,7 +15,6 @@ const ItemDetailContainer = (props) => {
             setItem(resultado)
             // console.log(resultado)
         })
-        }, 2000);
     }, [id])
 
     return(
