@@ -1,37 +1,25 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 const ItemCount = ({stock, initial, onAdd}) => {
-
-    const cantidadRef = useRef()
 
     const [contador, setContador] = useState(initial);
 
     useEffect(() => {
             if (contador < initial) {setContador(initial)}
             if (contador > stock) {setContador(stock)}
+            onAdd(contador)
           }, [contador, stock, initial]);
-
-    const sumar = () => {
-        onAdd(cantidadRef.current.value)
-        setContador(contador + 1)
-    }
-
-    const restar = () => {
-        onAdd(cantidadRef.current.value)
-        setContador(contador -1)
-    }
 
     return(
         <div className="contador">
             <div className="botones">
-                <button onClick={restar}>-</button>
+                <button onClick={() => {setContador(contador - 1)}}>-</button>
                 <input 
                     type="number" 
-                    ref={cantidadRef}
                     value={contador} 
                     disabled
                 />
-                <button onClick={sumar}>+</button>
+                <button onClick={() => {setContador(contador + 1)}}>+</button>
             </div>
         </div>
     )

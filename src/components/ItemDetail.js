@@ -4,19 +4,17 @@ import { Link } from 'react-router-dom';
 
 const ItemDetail = ({title, description, img, valor}) => {
 
-    const [cantidad, setCantidad] = useState(1)
-    const [carrito, setCarrito] = useState(null)
+    const [cantidad, setCantidad] = useState(0);
+    const [carrito, setCarrito] = useState(null);
 
 
-    const onAdd = (cantidadRef) => {
-        setCantidad(cantidadRef)
-        // console.log(cantidadRef)
-        // console.log('cantidad ' + cantidad)
+    const onAdd = (cantidadItem) => {
+        setCantidad(cantidadItem)
     }
 
-    const addCarrito = () => {
+    const cargarItem = () => {
         setCarrito([title, cantidad])
-        // console.log(carrito)
+        console.log(carrito)
     }
 
     return(
@@ -33,7 +31,7 @@ const ItemDetail = ({title, description, img, valor}) => {
                     onAdd={onAdd}
                 />
 
-                {carrito === null ? <button onClick={addCarrito} className='btn-agregar'>Agregar al carrtio</button> : <Link to='/cart'><button  className="btn-confirmar">Confirmar Compra</button></Link> }
+                {carrito === null ? <button onClick={cargarItem} className='btn-agregar'>Agregar al carrito</button> : <Link to='/cart'><button  className="btn-confirmar">Confirmar Compra</button></Link> }
 
             </div>
         </div>
