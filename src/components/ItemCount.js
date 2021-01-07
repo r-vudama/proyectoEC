@@ -8,7 +8,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             if (contador < initial) {setContador(initial)}
             if (contador > stock) {setContador(stock)}
             onAdd(contador)
-          }, [contador, stock, initial]);
+          }, [contador, stock, initial, onAdd]);
 
     return(
         <div className="contador">

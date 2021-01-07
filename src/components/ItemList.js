@@ -14,7 +14,6 @@ const ItemList = () => {
       }, [page]);
 
     useEffect(() => {
-        setTimeout(() => {
             fetch(`https://videogamesapi.herokuapp.com/api/games/?page=${page}`)
             .then(respuesta => {
               return respuesta.json();
@@ -23,7 +22,6 @@ const ItemList = () => {
             setItems(resultado.results)
             // console.log(resultado)
         })
-        }, 1000);
     }, [page])
 
     return(
