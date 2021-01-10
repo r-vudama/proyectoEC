@@ -1,4 +1,4 @@
-import React, { useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
 import { contexto } from '../context/cartContext'
@@ -6,7 +6,7 @@ import { contexto } from '../context/cartContext'
 
 const ItemDetail = ({title, description, img, valor}) => {
 
-    const { onAdd, cargarItem, carrito } = useContext(contexto);
+    const { onAdd, carrito, cargarItem } = useContext(contexto);
 
     return(
         

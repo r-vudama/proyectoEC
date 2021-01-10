@@ -1,11 +1,13 @@
-import React, { useState, useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import ItemDetail from './ItemDetail';
-// import CarritoProvider from '../context/cartContext'
+import { useParams } from 'react-router-dom';
+import { contexto } from '../context/productContextProvider'
 
-const ItemDetailContainer = (props) => {
+const ItemDetailContainer = () => {
 
-    const [item, setItem] = useState(false);
-    let id = props.match.params.id
+    const { item, setItem } = useContext(contexto);
+
+    const {id} = useParams();
 
     useEffect(() => {
             fetch(`https://videogamesapi.herokuapp.com/api/games/${id}`)
@@ -19,14 +21,15 @@ const ItemDetailContainer = (props) => {
     }, [id])
 
     return(
-        // <CarritoProvider>
         <div className="lista-productos-detail">
             {item ? 
             <ItemDetail key={item.id} title={item.title} description={item.description} img={item.cover} valor={250}/>
      : 'Cargando producto...'}
         </div>
-        // </CarritoProvider>
     )
 };
 
 export default ItemDetailContainer;
+
+
+

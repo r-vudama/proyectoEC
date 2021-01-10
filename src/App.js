@@ -7,12 +7,14 @@ import Platforms from './components/secciones/Platforms';
 import Genres from './components/secciones/Genres';
 import Directors from './components/secciones/Directors';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import CarritoProvider from './context/cartContext'
+import CarritoProvider from './context/cartContext';
+import ProductoProvider from './context/productContextProvider';
 
 function App() {
   return (
       <div className="App">
         <BrowserRouter>
+        <ProductoProvider>
           <NavBar/>
           <Switch>
           <CarritoProvider>
@@ -23,6 +25,7 @@ function App() {
             <Route path="/directors" component={Directors}/>
           </CarritoProvider>
           </Switch>
+        </ProductoProvider>
         </BrowserRouter>
       </div>
   );
