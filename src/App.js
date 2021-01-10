@@ -7,6 +7,7 @@ import Platforms from './components/secciones/Platforms';
 import Genres from './components/secciones/Genres';
 import Directors from './components/secciones/Directors';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import CarritoProvider from './context/cartContext'
 
 function App() {
   return (
@@ -14,11 +15,13 @@ function App() {
         <BrowserRouter>
           <NavBar/>
           <Switch>
+          <CarritoProvider>
             <Route exact path="/" component={ItemListContainer}/>
             <Route path='/itemdetail/:id' component={ItemDetailContainer}/>
             <Route path="/platforms" component={Platforms}/>
             <Route path="/genres" component={Genres}/>
             <Route path="/directors" component={Directors}/>
+          </CarritoProvider>
           </Switch>
         </BrowserRouter>
       </div>

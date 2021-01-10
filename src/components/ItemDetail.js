@@ -1,23 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext} from 'react';
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
+import { contexto } from '../context/cartContext'
+
 
 const ItemDetail = ({title, description, img, valor}) => {
 
-    const [cantidad, setCantidad] = useState(0);
-    const [carrito, setCarrito] = useState([]);
-
-
-    const onAdd = (cantidadItem) => {
-        setCantidad(cantidadItem)
-    }
-
-    const cargarItem = () => {
-        setCarrito([title, cantidad])
-        console.log(carrito)
-    }
+    const { onAdd, cargarItem, carrito } = useContext(contexto);
 
     return(
+        
         <div className="producto-card-detail">
             <img src={img} alt={title}/>
             <div className="producto-info">
@@ -30,9 +22,8 @@ const ItemDetail = ({title, description, img, valor}) => {
                     initial={1} 
                     onAdd={onAdd}
                 />
-                <button onClick={cargarItem} className='btn-agregar'>Agregar al carrito</button>
 
-                {/* {carrito.length === 0 ? <button onClick={cargarItem} className='btn-agregar'>Agregar al carrito</button> : <Link to='/cart'><button  className="btn-confirmar">Confirmar Compra</button></Link> } */}
+                {carrito.length === 0 ? <button onClick={cargarItem} className='btn-agregar'>Agregar al carrito</button> : <Link to='/cart'><button  className="btn-confirmar">Confirmar Compra</button></Link> }
 
             </div>
         </div>
