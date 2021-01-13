@@ -6,8 +6,10 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Platforms from './components/secciones/Platforms';
 import Genres from './components/secciones/Genres';
 import Directors from './components/secciones/Directors';
+import Cart from './components/Cart';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CarritoProvider from './context/cartContext';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
               <Route path="/platforms" component={Platforms}/>
               <Route path="/genres" component={Genres}/>
               <Route path="/directors" component={Directors}/>
+              <Route path="/cart" component={Cart}/>
             </Switch>
           </BrowserRouter>
         </CarritoProvider>

@@ -8,6 +8,7 @@ const ItemDetail = ({title, description, img, valor}) => {
 
     const { onAdd, cargarItem, productsCount, quitarDelCarrito, total, carrito, cantidad } = useContext(contexto);
 
+
     return(
         
         <div className="producto-card-detail">
@@ -22,10 +23,9 @@ const ItemDetail = ({title, description, img, valor}) => {
                     initial={1} 
                     onAdd={onAdd}
                 />
+                <input onClick={()=>cargarItem(title, valor, cantidad)} className='btn-agregar' type="button" value={`Agregar al carrito`}/>
 
-                {/* {carrito.length === 0 ? <button onClick={cargarItem} className='btn-agregar'>Agregar al carrito</button> : <Link to='/cart'><button  className="btn-confirmar">Confirmar Compra</button></Link> } */}
-
-                <input onClick={()=>cargarItem(title, valor, cantidad)} type="button" value={`Añadir al carrito`}/>
+                {/* {carrito.length === 0 ? <input onClick={()=>cargarItem(title, valor, cantidad)} className='btn-agregar' type="button" value={`Agregar al carrito`}/> : <Link to='/cart'><button  className="btn-confirmar">Confirmar Compra</button></Link> } */}
 
             </div>
         </div>

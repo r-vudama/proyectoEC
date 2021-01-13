@@ -18,12 +18,13 @@ const CarritoProvider = ({children}) => {
     const cargarItem = (producto, valor, cantidad) => {
       setCarrito([...carrito, {'nombre': producto, 'valor': valor, 'cantidad': cantidad }]);   
       console.log(producto, valor, cantidad)  
-      // console.log(carrito)
-      console.log(total(carrito))
+      console.log(`el total es $ ${total(carrito)}`)
+      console.log(`items igual en carrito ${cantidadProducto(carrito)}`)
+      console.log(carrito)
     }
 
     // Suma los productos (acc = acumulador) Recorre productos y suma quantity (cantidad)
-    const productsCount = () => {
+    const cantidadProducto = () => {
       return carrito.reduce((acc, item) => (acc += item.cantidad), 0);
     };
 
@@ -42,7 +43,7 @@ const CarritoProvider = ({children}) => {
     };
 
   return (
-    <Provider value={{onAdd, cargarItem, productsCount, quitarDelCarrito, total, carrito, cantidad}}>
+    <Provider value={{onAdd, cargarItem, cantidadProducto, quitarDelCarrito, total, carrito, cantidad}}>
       {children}
     </Provider>
   );
