@@ -1,11 +1,10 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
-import { contexto } from '../context/productContextProvider'
 
 const ItemDetailContainer = () => {
 
-    const { item, setItem } = useContext(contexto);
+    let [item, setItem] = useState(false);
 
     const {id} = useParams();
 

@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
 import ItemCount from './ItemCount';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { contexto } from '../context/cartContext'
 
 
 const ItemDetail = ({title, description, img, valor}) => {
 
-    const { onAdd, carrito, cargarItem } = useContext(contexto);
+    const { onAdd, cargarItem, productsCount, quitarDelCarrito, total, carrito, cantidad } = useContext(contexto);
 
     return(
         
@@ -23,7 +23,9 @@ const ItemDetail = ({title, description, img, valor}) => {
                     onAdd={onAdd}
                 />
 
-                {carrito.length === 0 ? <button onClick={cargarItem} className='btn-agregar'>Agregar al carrito</button> : <Link to='/cart'><button  className="btn-confirmar">Confirmar Compra</button></Link> }
+                {/* {carrito.length === 0 ? <button onClick={cargarItem} className='btn-agregar'>Agregar al carrito</button> : <Link to='/cart'><button  className="btn-confirmar">Confirmar Compra</button></Link> } */}
+
+                <input onClick={()=>cargarItem(title, valor, cantidad)} type="button" value={`Añadir al carrito`}/>
 
             </div>
         </div>

@@ -8,25 +8,22 @@ import Genres from './components/secciones/Genres';
 import Directors from './components/secciones/Directors';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CarritoProvider from './context/cartContext';
-import ProductoProvider from './context/productContextProvider';
 
 function App() {
   return (
       <div className="App">
-        <BrowserRouter>
-        <ProductoProvider>
-          <NavBar/>
-          <Switch>
-          <CarritoProvider>
-            <Route exact path="/" component={ItemListContainer}/>
-            <Route path='/itemdetail/:id' component={ItemDetailContainer}/>
-            <Route path="/platforms" component={Platforms}/>
-            <Route path="/genres" component={Genres}/>
-            <Route path="/directors" component={Directors}/>
-          </CarritoProvider>
-          </Switch>
-        </ProductoProvider>
-        </BrowserRouter>
+        <CarritoProvider>
+          <BrowserRouter>
+            <NavBar/>
+            <Switch>
+              <Route exact path="/" component={ItemListContainer}/>
+              <Route path='/itemdetail/:id' component={ItemDetailContainer}/>
+              <Route path="/platforms" component={Platforms}/>
+              <Route path="/genres" component={Genres}/>
+              <Route path="/directors" component={Directors}/>
+            </Switch>
+          </BrowserRouter>
+        </CarritoProvider>
       </div>
   );
 }

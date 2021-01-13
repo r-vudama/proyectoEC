@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 export const contexto = createContext();
 
 const { Provider } = contexto;
@@ -7,29 +7,42 @@ const CarritoProvider = ({children}) => {
 
     // Boton comprar
     const [cantidad, setCantidad] = useState(0);
-    let [productoTitulo, setProductoTitulo] = useState();
-    let [productoValor, setProductoValor] = useState();
     let [carrito, setCarrito] = useState([]);
     
+    //Toma la cantidad desde el contador
     const onAdd = (cantidadItem) => {
         setCantidad(cantidadItem)
     }
 
-    const cargarItem = ({title, valor}) => {
-        setCarrito(cantidad)
-        setProductoTitulo(title)
-        setProductoValor(valor)
-        console.log(cantidad, productoTitulo, productoValor)
+    //Carga el producto al carrito
+    const cargarItem = (producto, valor, cantidad) => {
+      setCarrito([...carrito, {'nombre': producto, 'valor': valor, 'cantidad': cantidad }]);   
+      console.log(producto, valor, cantidad)  
+      // console.log(carrito)
+      console.log(total(carrito))
     }
 
-    useEffect(() => {
-        console.log('cambio cantidad: ' + cantidad)
-        console.log('carrito: ' + carrito)
-    }, [cantidad, carrito])
+    // Suma los productos (acc = acumulador) Recorre productos y suma quantity (cantidad)
+    const productsCount = () => {
+      return carrito.reduce((acc, item) => (acc += item.cantidad), 0);
+    };
 
+    // Elimina producto del array. Busca el indice y elimina 1
+    const quitarDelCarrito = (id) => {
+      carrito.splice(
+        carrito.findIndex((p) => p.id === id),
+        1
+      );
+      setCarrito([...carrito]);
+    };
+
+    // Importe total
+    const total = () => {
+      return carrito.reduce((acc, p) => (acc += p.valor * p.cantidad), 0);
+    };
 
   return (
-    <Provider value={{onAdd, cargarItem, carrito, cantidad}}>
+    <Provider value={{onAdd, cargarItem, productsCount, quitarDelCarrito, total, carrito, cantidad}}>
       {children}
     </Provider>
   );
