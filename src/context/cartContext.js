@@ -5,7 +5,6 @@ const { Provider } = contexto;
 
 const CarritoProvider = ({children}) => {
 
-    // Boton comprar
     const [cantidad, setCantidad] = useState(0);
     let [carrito, setCarrito] = useState([]);
     
@@ -16,6 +15,7 @@ const CarritoProvider = ({children}) => {
 
     //Carga el producto al carrito
     const cargarItem = (producto, valor, cantidad) => {
+
       setCarrito([...carrito, {'nombre': producto, 'valor': valor, 'cantidad': cantidad }]);   
       console.log(producto, valor, cantidad)  
       console.log(`el total es $ ${total(carrito)}`)
@@ -23,18 +23,17 @@ const CarritoProvider = ({children}) => {
       console.log(carrito)
     }
 
-    // Suma los productos (acc = acumulador) Recorre productos y suma quantity (cantidad)
+    // Suma los productos, recorre productos y suma la cantidad
     const cantidadProducto = () => {
-      return carrito.reduce((acc, item) => (acc += item.cantidad), 0);
+      return carrito.reduce((accumulador, item) => (accumulador += item.cantidad), 0);
     };
 
     // Elimina producto del array. Busca el indice y elimina 1
-    const quitarDelCarrito = (id) => {
-      carrito.splice(
-        carrito.findIndex((p) => p.id === id),
-        1
-      );
+    const quitarDelCarrito = (index) => {
+
+      carrito.splice(index, 1);
       setCarrito([...carrito]);
+      // console.log(carrito)
     };
 
     // Importe total

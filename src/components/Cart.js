@@ -3,14 +3,17 @@ import { contexto } from '../context/cartContext'
 
 const Cart = () => {
 
-    const { onAdd, cargarItem, productsCount, quitarDelCarrito, total, carrito, cantidad } = useContext(contexto);
+    const { onAdd, cargarItem, productsCount, quitarDelCarrito, carrito, cantidad } = useContext(contexto);
 
     return(
         <div>
             {carrito.map((card, i) => (
-                <div key={i} id={card.id}>
-                    <h2>item</h2>
-                    <input onClick={quitarDelCarrito} type="button" value={`Eliminar carrito`}/>
+                <div key={i}>
+                    <p>{card.nombre}</p>
+                    <p>$ {card.valor}</p>
+                    <p>Unidades: {card.cantidad}</p>
+                    <p>Subtotal: $ {card.valor * card.cantidad}</p>
+                    <input onClick={quitarDelCarrito} type="button" value={`Quitar del carrito`}/>
                 </div>
             ))}
         </div>
