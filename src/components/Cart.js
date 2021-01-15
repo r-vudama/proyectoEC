@@ -3,7 +3,7 @@ import { contexto } from '../context/cartContext'
 
 const Cart = () => {
 
-    const { onAdd, cargarItem, productsCount, quitarDelCarrito, carrito, cantidad } = useContext(contexto);
+    const { onAdd, cargarItem, productsCount, quitarDelCarrito, carrito, total, cantidad } = useContext(contexto);
 
     return(
         <div className="contenedor-cart">
@@ -19,6 +19,7 @@ const Cart = () => {
                 </div>
             ))}
             
+            <div className="cart-total">Total: ${total()}</div>
         </div>
     )
 }

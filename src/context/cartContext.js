@@ -16,11 +16,14 @@ const CarritoProvider = ({children}) => {
     //Carga el producto al carrito
     const cargarItem = (producto, valor, cantidad) => {
 
-      setCarrito([...carrito, {'nombre': producto, 'valor': valor, 'cantidad': cantidad }]);   
-      console.log(producto, valor, cantidad)  
-      console.log(`el total es $ ${total(carrito)}`)
-      console.log(`items igual en carrito ${cantidadProducto(carrito)}`)
-      console.log(carrito)
+      let prodIndex = carrito.findIndex(item => item.nombre === producto);
+      if(prodIndex === -1){
+        setCarrito([...carrito, {'nombre': producto, 'valor': valor, 'cantidad': cantidad }]); 
+      }else{
+        let carritoModificado = [...carrito]
+        carritoModificado[prodIndex].cantidad += cantidad;
+        setCarrito(carritoModificado)
+      }
     }
 
     // Suma los productos, recorre productos y suma la cantidad
@@ -30,7 +33,6 @@ const CarritoProvider = ({children}) => {
 
     // Elimina producto del array. Busca el indice y elimina 1
     const quitarDelCarrito = (index) => {
-
       carrito.splice(index, 1);
       setCarrito([...carrito]);
       // console.log(carrito)
