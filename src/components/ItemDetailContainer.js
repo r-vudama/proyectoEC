@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
     return(
         <div className="lista-productos-detail">
             {item ? 
-            <ItemDetail key={item.id} title={item.title} description={item.description} img={item.cover} valor={250}/>
+            <ItemDetail key={item.id} id={item.id} title={item.title} description={item.description} img={item.cover} valor={250}/>
      : 'Cargando producto...'}
         </div>
     )

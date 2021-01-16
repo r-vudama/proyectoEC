@@ -193,16 +193,15 @@ body {
   margin-right: 30px;
 }
 
-.btn-confirmar, .btn-agregar {
+.btn-confirmar {
   width: 200px;
   border: none;
   background: #e80033;
-  margin: 20px;
   padding: 20px;
   color: #fff;
   cursor: pointer;
 }
-.btn-confirmar:hover, .btn-agregar:hover {
+.btn-confirmar:hover {
   background: #bf0d3e;
 }
 
