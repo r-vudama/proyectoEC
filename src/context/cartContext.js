@@ -45,8 +45,13 @@ const CarritoProvider = ({children}) => {
       return carrito.reduce((acc, p) => (acc += p.valor * p.cantidad), 0);
     };
 
+    //Elimina todos los items en el carrito
+    const vaciarCarrito = () =>{
+      setCarrito([])
+    }
+
   return (
-    <Provider value={{onAdd, cargarItem, cantidadProducto, quitarDelCarrito, total, carrito, cantidad}}>
+    <Provider value={{onAdd, cargarItem, cantidadProducto, quitarDelCarrito, total, vaciarCarrito, carrito, cantidad}}>
       {children}
     </Provider>
   );

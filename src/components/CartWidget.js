@@ -10,7 +10,7 @@ const CartWidget = () => {
             <div>
                 <img src="./img/cart.svg" alt="Carrito" className="header__carrito"/>
             </div>
-            <div className="carrito__cantidad">{cantidadProducto()}</div>
+            {cantidadProducto() === 0 ? '' :  <div className="carrito__cantidad">{cantidadProducto()}</div>}
         </div>
         
         </>

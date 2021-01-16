@@ -3,7 +3,7 @@ import { contexto } from '../context/cartContext'
 
 const Cart = () => {
 
-    const {carrito, total, quitarDelCarrito } = useContext(contexto);
+    const {carrito, total, quitarDelCarrito, vaciarCarrito } = useContext(contexto);
 
     const borrarItem = (p) => {
         quitarDelCarrito(p.id);
@@ -24,6 +24,8 @@ const Cart = () => {
             ))}
             
             <div className="cart-total">Total: ${total()}</div>
+
+            {carrito.length === 0 ? '' : <input onClick={vaciarCarrito} type="button" className="btn-eliminar-todo" value={`Vaciar el carrito`}/>}
         </div>
     )
 }
