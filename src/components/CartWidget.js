@@ -3,11 +3,17 @@ import { contexto } from '../context/cartContext'
 
 const CartWidget = () => {
 
-    const { carrito } = useContext(contexto);
+    const { cantidadProducto } = useContext(contexto);
     return(
+        <>
         <div className="contenedor-carrito">
-            <img src="./img/cart.svg" alt="Carrito" className="header__carrito"/>
+            <div>
+                <img src="./img/cart.svg" alt="Carrito" className="header__carrito"/>
+            </div>
+            <div className="carrito__cantidad">{cantidadProducto()}</div>
         </div>
+        
+        </>
     )
 }
 

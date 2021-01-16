@@ -16,7 +16,7 @@ body {
 
 .header-contenedor {
   width: 100%;
-  height: 110px;
+  height: 135px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,14 +66,27 @@ body {
 }
 
 .contenedor-carrito {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #fff;
   border-radius: 50%;
   cursor: pointer;
+}
+.contenedor-carrito .carrito__cantidad {
+  width: 20px;
+  font-size: 12px;
+  background: red;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8px;
 }
 
 .header__carrito {
