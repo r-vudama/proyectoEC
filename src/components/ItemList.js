@@ -4,29 +4,33 @@ import { Link } from 'react-router-dom';
 import { getFirestore } from '../firebase';
 
 const ItemList = () => {
-
-    const [items, setItems] = useState(false);
-    // const [id, setId] = useState(false);
+    
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
 
         const db = getFirestore()
         const itemsCollection = db.collection('items')
         const query = itemsCollection.get()
-    
+
         query
         .then((resultado) => {
-            setItems(resultado.docs.map(doc => doc.data()));
-            // setId(resultado.docs.map(doc => doc.id));
+            const data = resultado.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+              }));
+              setItems(data)
         })
         .catch((err) => {console.log(err)})
-      },[])
+    },[])
+
+    // console.log(items)
 
     return(
         <div className="lista-productos-detail">
             {items ? items.map((card, i) => (
-                        <Link to={{pathname: `/itemdetail/${card.game}`}} key={i} id={card.game}>
-                            <Item id={card.game} title={card.title} cover={card.cover} valor={card.value}/> 
+                        <Link to={{pathname: `/itemdetail/${card.id}`}} key={i} id={card.id}>
+                            <Item id={card.id} title={card.title} cover={card.cover} valor={card.value}/> 
                         </Link> 
                         )) : 'Cargando productos...'}
 
@@ -35,7 +39,6 @@ const ItemList = () => {
 };
 
 export default ItemList;
-
 
 
 // useEffect(() => {
@@ -54,9 +57,6 @@ export default ItemList;
 //     .catch((err) => {console.log(err)})
 
 //   },[])
-
-
-
 
 
 // import React, { useState, useEffect} from 'react';

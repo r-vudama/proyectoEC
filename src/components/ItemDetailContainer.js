@@ -1,23 +1,28 @@
 import React, {useState, useEffect} from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
+import { getFirestore } from '../firebase';
 
 const ItemDetailContainer = () => {
 
-    let [item, setItem] = useState(false);
+    let [item, setItem] = useState([]);
 
     const {id} = useParams();
 
     useEffect(() => {
-            fetch(`https://videogamesapi.herokuapp.com/api/games/${id}`)
-            .then(respuesta => {
-              return respuesta.json();
-            })
-        .then((resultado)=>{
-            setItem(resultado)
-            // console.log(resultado)
+
+        const db = getFirestore()
+        const itemCollection = db.collection('items')
+        const item = itemCollection.doc(id)
+
+        item
+        .get()
+        .then((resultado) => {
+            const data = resultado.data() 
+            setItem(data)
         })
-    }, [id])
+        .catch((err) => {console.log(err)})
+    },[])
 
     return(
         <div className="lista-productos-detail">
