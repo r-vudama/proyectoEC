@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { contexto } from '../context/cartContext'
 
 
-const ItemDetail = ({id, title, description, img, valor}) => {
+const ItemDetail = ({id, title, description, img, valor, stock}) => {
 
     const { onAdd, cargarItem, carrito, cantidad } = useContext(contexto);
 
@@ -18,7 +18,7 @@ const ItemDetail = ({id, title, description, img, valor}) => {
                 <p>{description}</p>
 
                 <ItemCount 
-                    stock={10} 
+                    stock={stock} 
                     initial={1} 
                     onAdd={onAdd}
                 />

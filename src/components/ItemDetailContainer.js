@@ -22,12 +22,14 @@ const ItemDetailContainer = () => {
             setItem(data)
         })
         .catch((err) => {console.log(err)})
-    },[])
+    },[id])
+
+    // console.log(item)
 
     return(
         <div className="lista-productos-detail">
             {item ? 
-            <ItemDetail key={item.id} id={item.id} title={item.title} description={item.description} img={item.cover} valor={250}/>
+            <ItemDetail key={id} id={id} title={item.title} description={item.description} img={item.cover} valor={item.value} stock={item.stock}/>
      : 'Cargando producto...'}
         </div>
     )

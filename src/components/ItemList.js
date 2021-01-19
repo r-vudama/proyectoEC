@@ -30,7 +30,7 @@ const ItemList = () => {
         <div className="lista-productos-detail">
             {items ? items.map((card, i) => (
                         <Link to={{pathname: `/itemdetail/${card.id}`}} key={i} id={card.id}>
-                            <Item id={card.id} title={card.title} cover={card.cover} valor={card.value}/> 
+                            <Item id={card.id} title={card.title} cover={card.cover} valor={card.value} stock={card.stock}/> 
                         </Link> 
                         )) : 'Cargando productos...'}
 
