@@ -40,13 +40,13 @@ const Cart = () => {
             {carrito.length === 0 ? '' :            
                 <form onSubmit={confirmarCompra} className="form-compra">
                     <div className="input-form">
-                        <input value={nombre} placeholder="Nombre*" required onChange={(e)=>{setNombre(e.target.value)}} type="text"/>
+                        <input value={nombre} placeholder="Nombre*" onChange={(e)=>{setNombre(e.target.value)}} type="text"/>
                     </div>
                     <div className="input-form">
-                        <input value={telefono} placeholder="Teléfono*" required onChange={(e)=>{setTelefono(e.target.value)}} type="text"/>
+                        <input value={telefono} placeholder="Teléfono*" onChange={(e)=>{setTelefono(e.target.value)}} type="text"/>
                     </div>
                     <div className="input-form">
-                        <input value={email} placeholder="E-mail*" required onChange={(e)=>{setEmail(e.target.value)}} type="email"/>
+                        <input value={email} placeholder="E-mail*" onChange={(e)=>{setEmail(e.target.value)}} type="email"/>
                     </div>
                     <div className="botones">
                     <button type="submit" className="btn-comprar">Comprar</button>
