@@ -410,13 +410,50 @@ body {
 .contenedor-cart .btn-eliminar-todo {
   width: 200px;
   border: none;
+  background: #4d4d4d;
+  padding: 20px;
+  margin: 15px 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.contenedor-cart .btn-eliminar-todo:hover {
+  background: #292929;
+}
+
+.form-compra {
+  width: 100%;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-compra .input-form {
+  width: 50%;
+}
+.form-compra .input-form input {
+  width: 100%;
+  margin: 10px;
+  padding: 12px;
+  border: none;
+}
+.form-compra .btn-comprar {
+  width: 200px;
+  margin: 15px 10px;
+  border: none;
   background: #e80033;
   padding: 20px;
   color: #fff;
   cursor: pointer;
 }
-.contenedor-cart .btn-eliminar-todo:hover {
+.form-compra .btn-comprar:hover {
   background: #bf0d3e;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */
