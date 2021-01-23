@@ -6,9 +6,11 @@ const NavBar = () => {
 
   const [links, setLinks] = useState([
                                       {nombre: 'Juegos', url: '/'}, 
-                                      {nombre: 'Plataformas', url: '/platforms'}, 
-                                      {nombre: 'Generos', url: '/genres'}, 
-                                      {nombre: 'Directores', url: '/directors'}
+                                      {nombre: 'Sega Genesis', url: '/sega'}, 
+                                      {nombre: 'NES', url: '/nes'}, 
+                                      {nombre: 'Super Nintendo', url: '/snes'},
+                                      {nombre: 'GameBoy', url: '/gameboy'},
+                                      {nombre: 'Playstation', url: '/playstation'}
                                     ])
     
     return (
