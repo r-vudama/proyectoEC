@@ -17,14 +17,18 @@ const ItemDetail = ({id, title, description, img, valor, stock}) => {
                 <p className="card-valor">${valor}</p>
                 <p>{description}</p>
 
-                <ItemCount 
-                    stock={stock} 
-                    initial={1} 
-                    onAdd={onAdd}
-                />
-                <input onClick={()=>cargarItem(id, title, valor, cantidad)} className='btn-agregar' type="button" value={`Agregar al carrito`}/>
+                {stock === 0 ? <h2>PRODUCTO SIN STOCK</h2> :
+                <>
+                    <ItemCount 
+                        stock={stock} 
+                        initial={1} 
+                        onAdd={onAdd}
+                    />
+                    <input onClick={()=>cargarItem(id, title, valor, cantidad)} className='btn-agregar' type="button" value={`Agregar al carrito`}/>
 
-                {carrito.length === 0 ? '' : <Link to='/cart'><button  className="btn-confirmar">Confirmar Compra</button></Link> }
+                    {carrito.length === 0 ? '' : <Link to='/cart'><button  className="btn-confirmar">Confirmar Compra</button></Link> }
+                </>}
+
 
             </div>
         </div>
