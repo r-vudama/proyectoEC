@@ -1,10 +1,11 @@
 import React, {useContext} from 'react';
 import { contexto } from '../context/cartContext';
+import CartForm from './CartForm'
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-    const {carrito, total, quitarDelCarrito, vaciarCarrito, nombre, setNombre, telefono, setTelefono, email, setEmail, compra, confirmarCompra} = useContext(contexto);
+    const {carrito, total, quitarDelCarrito, compra} = useContext(contexto);
 
     const borrarItem = (p) => {
         quitarDelCarrito(p.id);
@@ -37,24 +38,7 @@ const Cart = () => {
             
             <div className="cart-total">Total: ${total()}</div>
 
-            {carrito.length === 0 ? '' :            
-                <form onSubmit={confirmarCompra} className="form-compra">
-                    <div className="input-form">
-                        <input value={nombre} placeholder="Nombre*" required onChange={(e)=>{setNombre(e.target.value)}} type="text"/>
-                    </div>
-                    <div className="input-form">
-                        <input value={telefono} placeholder="Teléfono*" required onChange={(e)=>{setTelefono(e.target.value)}} type="text"/>
-                    </div>
-                    <div className="input-form">
-                        <input value={email} placeholder="E-mail*" required onChange={(e)=>{setEmail(e.target.value)}} type="email"/>
-                    </div>
-                    <div className="botones">
-                    <button type="submit" className="btn-comprar">Comprar</button>
-                    <input onClick={vaciarCarrito} type="button" className="btn-eliminar-todo" value={`Vaciar el carrito`}/>
-                    </div>
-                </form>
-            }
-
+            {carrito.length === 0 ? '' : <CartForm/>}
         </div>
     )
 }

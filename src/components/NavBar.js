@@ -6,11 +6,11 @@ const NavBar = () => {
 
   const [links, setLinks] = useState([
                                       {nombre: 'Juegos', url: '/'}, 
-                                      {nombre: 'Sega Genesis', url: '/sega'}, 
-                                      {nombre: 'NES', url: '/nes'}, 
-                                      {nombre: 'Super Nintendo', url: '/snes'},
-                                      {nombre: 'GameBoy', url: '/gameboy'},
-                                      {nombre: 'Playstation', url: '/playstation'}
+                                      {nombre: 'Sega Genesis', url: '/sega', platform: 'Sega Genesis'}, 
+                                      {nombre: 'NES', url: '/nes', platform: 'Nintendo Entertainment System (NES)'}, 
+                                      {nombre: 'Super Nintendo', url: '/snes', platform: 'Super Nintendo Entertainment System (SNES)'},
+                                      {nombre: 'GameBoy', url: '/gameboy', platform: 'Game Boy'},
+                                      {nombre: 'Playstation', url: '/playstation', platform: 'PlayStation'}
                                     ])
     
     return (
@@ -20,7 +20,7 @@ const NavBar = () => {
           <nav className="header__nav">
             <ul className="header__menu">
                 {links.map((link, i) => {
-                    return (<li key={i}><NavLink to={link.url}>{link.nombre}</NavLink></li>)
+                    return (<li key={i} platform={link.platform}><NavLink to={link.url}>{link.nombre}</NavLink></li>)
                 })}
             </ul>
           <NavLink to='/cart'><CartWidget/></NavLink>  
