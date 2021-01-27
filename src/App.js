@@ -11,12 +11,14 @@ import Nes from './components/filter/Nes';
 import Cart from './components/Cart';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CarritoProvider from './context/cartContext';
+import ListContext from './context/listContext';
 
 function App() {
 
   return (
       <div className="App">
         <CarritoProvider>
+        <ListContext>
           <BrowserRouter>
             <NavBar/>
             <Switch>
@@ -30,6 +32,7 @@ function App() {
               <Route path="/cart" component={Cart}/>
             </Switch>
           </BrowserRouter>
+        </ListContext>
         </CarritoProvider>
       </div>
   );

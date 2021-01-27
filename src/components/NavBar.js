@@ -1,18 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import CartWidget from './CartWidget';
 import { NavLink } from 'react-router-dom';
+import { ListaContexto } from '../context/listContext';
 
 const NavBar = () => {
 
-  const [links, setLinks] = useState([
-                                      {nombre: 'Juegos', url: '/'}, 
-                                      {nombre: 'Sega Genesis', url: '/sega', platform: 'Sega Genesis'}, 
-                                      {nombre: 'NES', url: '/nes', platform: 'Nintendo Entertainment System (NES)'}, 
-                                      {nombre: 'Super Nintendo', url: '/snes', platform: 'Super Nintendo Entertainment System (SNES)'},
-                                      {nombre: 'GameBoy', url: '/gameboy', platform: 'Game Boy'},
-                                      {nombre: 'Playstation', url: '/playstation', platform: 'PlayStation'}
-                                    ])
-    
+  const { links } = useContext(ListaContexto)
+
     return (
       <div className="header-contenedor">
         <header className="header">
