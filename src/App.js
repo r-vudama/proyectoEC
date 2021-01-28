@@ -3,11 +3,7 @@ import './components/css/main.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import Sega from './components/filter/Sega';
-import Gameboy from './components/filter/Gameboy';
-import Playstation from './components/filter/Playstation';
-import Snes from './components/filter/Snes';
-import Nes from './components/filter/Nes';
+import FilterPlatform from './components/filter/FilterPlatform';
 import Cart from './components/Cart';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CarritoProvider from './context/cartContext';
@@ -24,11 +20,11 @@ function App() {
             <Switch>
               <Route exact path="/" component={ItemListContainer}/>
               <Route path='/itemdetail/:id' component={ItemDetailContainer}/>
-              <Route path="/sega" component={Sega}/>
-              <Route path="/gameboy" component={Gameboy}/>
-              <Route path="/nes" component={Nes}/>
-              <Route path="/snes" component={Snes}/>
-              <Route path="/playstation" component={Playstation}/>
+              <Route path="/sega" component={FilterPlatform}/>
+              <Route path="/gameboy" component={FilterPlatform}/>
+              <Route path="/nes" component={FilterPlatform}/>
+              <Route path="/snes" component={FilterPlatform}/>
+              <Route path="/playstation" component={FilterPlatform}/>
               <Route path="/cart" component={Cart}/>
             </Switch>
           </BrowserRouter>

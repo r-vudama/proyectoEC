@@ -3,14 +3,14 @@ import Item from '../Item';
 import { Link } from 'react-router-dom';
 import { getFirestore } from '../../firebase';
 
-const Playstation = () => {
+const FilterPlatform = (props) => {
     const [items, setItems] = useState(false);
 
     useEffect(() => {
 
         const db = getFirestore()
         const itemsCollection = db.collection('items')
-        const query = itemsCollection.where("platform", "==", "PlayStation")
+        const query = itemsCollection.where("platform", "==", props.match.url)
         query.get()
 
         .then((resultado) => {
@@ -21,7 +21,7 @@ const Playstation = () => {
               setItems(data)
         })
         .catch((err) => {console.log(err)})
-    },[])
+    },[props.match.url])
 
     // console.log(items)
 
@@ -36,4 +36,5 @@ const Playstation = () => {
     )
 }
 
-export default Playstation
+export default FilterPlatform
+

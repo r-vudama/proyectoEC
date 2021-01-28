@@ -47,25 +47,3 @@ const ListContext = ({children}) => {
 }
 
 export default ListContext
-
-
-    // const [items, setItems] = useState(false);
-
-    // useEffect(() => {
-
-    //     const db = getFirestore()
-    //     const itemsCollection = db.collection('items')
-    //     const query = itemsCollection.where("platform", "==", platform)
-    //     query.get()
-
-    //     .then((resultado) => {
-    //         const data = resultado.docs.map((doc) => ({
-    //             id: doc.id,
-    //             ...doc.data(),
-    //           }));
-    //           setItems(data)
-    //     })
-    //     .catch((err) => {console.log(err)})
-    // },[])
-
-    // console.log(items)

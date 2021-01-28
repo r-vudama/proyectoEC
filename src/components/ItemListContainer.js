@@ -1,11 +1,8 @@
-import React, { useContext }from 'react';
+import React from 'react';
 import { Route } from "react-router-dom";
 import ItemList from './ItemList';
-import { ListaContexto } from '../context/listContext';
 
 const ItemListContainer = () => {
-
-    const { items } = useContext(ListaContexto)
     
     return(
         <div className="contenedor-items">
