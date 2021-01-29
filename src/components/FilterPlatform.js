@@ -1,16 +1,18 @@
 import React, { useState, useEffect} from 'react';
-import Item from '../Item';
+import Item from './Item';
 import { Link } from 'react-router-dom';
-import { getFirestore } from '../../firebase';
+import { getFirestore } from '../firebase';
 
 const FilterPlatform = (props) => {
     const [items, setItems] = useState(false);
+
+    const url = props.match.url
 
     useEffect(() => {
 
         const db = getFirestore()
         const itemsCollection = db.collection('items')
-        const query = itemsCollection.where("platform", "==", props.match.url)
+        const query = itemsCollection.where("platform", "==", url)
         query.get()
 
         .then((resultado) => {
@@ -21,7 +23,7 @@ const FilterPlatform = (props) => {
               setItems(data)
         })
         .catch((err) => {console.log(err)})
-    },[props.match.url])
+    },[url])
 
     // console.log(items)
 
