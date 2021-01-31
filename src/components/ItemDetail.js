@@ -29,7 +29,6 @@ const ItemDetail = ({id, title, description, img, valor, stock}) => {
                     {carrito.length === 0 ? '' : <Link to='/cart'><button  className="btn-confirmar">Confirmar Compra</button></Link> }
                 </>}
 
-
             </div>
         </div>
     )

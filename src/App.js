@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CarritoProvider from './context/cartContext';
 import ListContext from './context/listContext';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           </BrowserRouter>
         </ListContext>
         </CarritoProvider>
+        <Footer/>
       </div>
   );
 }
