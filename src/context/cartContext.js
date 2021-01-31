@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 import { getFirestore } from '../firebase';
+import firebase from "firebase/app";
 export const contexto = createContext();
 
 
@@ -17,6 +18,7 @@ const CarritoProvider = ({children}) => {
         //Envia datos de la compra a la base de datos
         const confirmarCompra = (e) => {
           e.preventDefault()
+          const date = firebase.firestore.Timestamp.fromDate(new Date())
           const datosCompra = {
               buyer : {
                   name : nombre,
@@ -24,6 +26,7 @@ const CarritoProvider = ({children}) => {
                   email : email
               },
               items : [...carrito],
+              date: date.toDate(),
               total : total()
           }
           // console.log(datosCompra)
