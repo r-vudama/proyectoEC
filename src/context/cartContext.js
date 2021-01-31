@@ -3,7 +3,6 @@ import { getFirestore } from '../firebase';
 import firebase from "firebase/app";
 export const contexto = createContext();
 
-
 const { Provider } = contexto;
 
 const CarritoProvider = ({children}) => {
@@ -14,8 +13,10 @@ const CarritoProvider = ({children}) => {
     const [telefono, setTelefono] = useState("");
     const [email, setEmail] = useState("");
     const [compra, setCompra] = useState("");
-
+    
+        //---------------------------------------------
         //Envia datos de la compra a la base de datos
+        //---------------------------------------------
         const confirmarCompra = (e) => {
           e.preventDefault()
           const date = firebase.firestore.Timestamp.fromDate(new Date())
@@ -53,13 +54,16 @@ const CarritoProvider = ({children}) => {
 
       }
     
-    
+    //---------------------------------------------
     //Toma la cantidad desde el contador
+    //---------------------------------------------
     const onAdd = (cantidadItem) => {
         setCantidad(cantidadItem)
     }
 
+    //---------------------------------------------
     //Carga el producto al carrito
+    //---------------------------------------------
     const cargarItem = (id, producto, valor, cantidad) => {
 
       let prodIndex = carrito.findIndex(item => item.nombre === producto);
@@ -72,12 +76,16 @@ const CarritoProvider = ({children}) => {
       }
     }
 
+    //---------------------------------------------
     // Suma cantidad y recorre los productos
+    //---------------------------------------------
     const cantidadProducto = () => {
       return carrito.reduce((accumulador, item) => (accumulador += item.cantidad), 0);
     };
 
+    //---------------------------------------------
     // Elimina producto del array. Busca el indice y elimina 1
+    //---------------------------------------------
     const quitarDelCarrito = (id) => {
       carrito.splice(
         carrito.findIndex((p) => p.id === id),
@@ -86,17 +94,19 @@ const CarritoProvider = ({children}) => {
       setCarrito([...carrito]);
     };
     
+    //---------------------------------------------
     // Importe total
+    //---------------------------------------------
     const total = () => {
       return carrito.reduce((acc, p) => (acc += p.valor * p.cantidad), 0);
     };
 
+    //---------------------------------------------
     //Elimina todos los items en el carrito
+    //---------------------------------------------
     const vaciarCarrito = () =>{
       setCarrito([])
     }
-
-
 
   return (
     <Provider value={{onAdd, cargarItem, cantidadProducto, quitarDelCarrito, total, vaciarCarrito, carrito, cantidad, nombre, setNombre, telefono, setTelefono, email, setEmail,compra, setCompra, confirmarCompra}}>

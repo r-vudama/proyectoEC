@@ -3,6 +3,9 @@ import Item from './Item';
 import { Link } from 'react-router-dom';
 import { getFirestore } from '../firebase';
 
+//---------------------------------------------
+//Filtra los juegos desde el menu
+//---------------------------------------------
 const FilterPlatform = (props) => {
     const [items, setItems] = useState(false);
 

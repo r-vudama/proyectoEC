@@ -6,7 +6,9 @@ const { Provider } = ListaContexto;
 
 const ListContext = ({children}) => {
 
-    //Menu
+    //---------------------------------------------
+    //Info del Menu
+    //---------------------------------------------
     const [links, setLinks] = useState([
         {nombre: 'Juegos', url: '/'}, 
         {nombre: 'Sega Genesis', url: '/sega', platform: 'Sega Genesis'}, 
@@ -16,7 +18,9 @@ const ListContext = ({children}) => {
         {nombre: 'Playstation', url: '/playstation', platform: 'PlayStation'}
       ])
     
+    //---------------------------------------------  
     //Trae todos los items al ItemLIst
+    //---------------------------------------------
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -37,7 +41,6 @@ const ListContext = ({children}) => {
     },[])
 
     // console.log(items)
-
 
     return(
         <Provider value={{links, setLinks, items, setItems}}>
