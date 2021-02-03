@@ -8,7 +8,7 @@ const messagingSenderId = process.env.REACT_APP_messagingSenderId
 const projectId = process.env.REACT_APP_projectId
 const storageBucket = process.env.REACT_APP_storageBucket
 
-const firebaseConfig = {apiKey,authDomain,projectId,storageBucket,messagingSenderId,appId}
+const firebaseConfig = {apiKey, authDomain, projectId, storageBucket, messagingSenderId, appId}
 
 //Da instancia de la app inicializada
 const app = firebase.initializeApp(firebaseConfig);
